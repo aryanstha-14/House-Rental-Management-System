@@ -1,0 +1,129 @@
+:root {
+    --primary: #3897f0; /* Instagram's signature blue */
+    --background: #fafafa; /* Light background */
+    --card-bg: #ffffff; /* White card */
+    --text: #262626; /* Dark text */
+    --border-color: #dbdbdb; /* Light gray border */
+    --button-hover: #287cc0; /* Darker blue for hover effect */
+    --border-radius: 5px; /* Subtle rounded corners */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --fade-in-duration: 0.8s;
+    --hover-scale: 1.05;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    animation: fadeIn var(--fade-in-duration) ease-in-out;
+}
+
+.registration-container {
+    background: var(--card-bg);
+    padding: 1.5rem; /* Reduced padding for compactness */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 320px; /* Smaller max width */
+    text-align: center;
+    animation: slideIn var(--fade-in-duration) ease-in-out;
+}
+
+h2 {
+    color: var(--text);
+    font-weight: 400;
+    margin-bottom: 1rem; /* Reduced margin for compactness */
+    font-size: 1.2rem; /* Slightly smaller font */
+}
+
+.form-group {
+    margin-bottom: 0.75rem; /* Reduced spacing between form elements */
+    text-align: left;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.65rem; /* Reduced padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.95rem; /* Slightly smaller font size */
+    background: var(--background);
+    color: var(--text);
+    margin-bottom: 0.75rem; /* Reduced bottom margin */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    outline: none;
+    transform: scale(var(--hover-scale));
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 0.65rem; /* Reduced padding for compact button */
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.75rem; /* Reduced top margin */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: scale(var(--hover-scale));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+p {
+    margin-top: 1rem; /* Reduced top margin */
+    font-size: 0.85rem; /* Slightly smaller font */
+    color: #555;
+    animation: fadeIn var(--fade-in-duration) ease-in-out;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--button-hover);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

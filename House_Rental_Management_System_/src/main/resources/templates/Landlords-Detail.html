@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Landlord Management</title>
+    
+     <link rel="stylesheet" th:href="@{/css/landlord_detail.css}">
+</head>
+  
+<body>
+    <h1>Landlord Management</h1>
+
+    <!-- Form to Add New Landlord -->
+    <h2>Add Landlord</h2>
+    <form method="post" th:action="@{/landlords}">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="address" placeholder="Address" required />
+        <button type="submit">Add Landlord</button>
+    </form>
+
+    <!-- Display All Landlords -->
+    <h2>All Landlords</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="landlord : ${landlords}">
+                <td th:text="${landlord.id}"></td>
+                <td th:text="${landlord.name}"></td>
+                <td th:text="${landlord.email}"></td>
+                <td th:text="${landlord.address}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

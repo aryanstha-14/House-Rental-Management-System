@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Rental Management System</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}">
+</head>
+<body>
+  <header>
+    <h1>House Rental<br> Management System</h1>
+    <nav>
+    	<a th:href="@{/addNewHouse/{id}(id=${landlord.id})}">Add House</a>
+		<a th:href="@{/landlord/{id}/houses(id=${landlord.id})}">View My House Details</a>
+
+    </nav>
+  </header>
+  <main>
+    <p>Welcome to the House Rental Management System !</p>
+<p>"Take control of your property management journey. Begin by clicking above!"</p>
+
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

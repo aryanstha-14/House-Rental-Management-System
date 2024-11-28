@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rental Management - Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/tenant_detail.css}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>House Rental Management Dashboard</h1>
+            <p>"Your home, your choice, your comfort."</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+   <!-- <nav>
+        <ul class="nav-menu">
+            <li><a href="#tenants">Tenants</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#payments">Payments</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="#buying-process">Buying Process</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>-->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Money Our Home</h2>
+            <p>Explore the best rental properties tailored for your needs.</p>
+            <a href="#properties"><button>View Properties</button></a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Properties -->
+        <section id="properties" class="featured-properties">
+            <h2>Properties Dashboard</h2>
+            <div class="property-grid">
+                <marquee>Finding homes for dreams and solutions for owners</marquee>
+
+
+   
+ <form class="house-div" action="/houses/booknow" method="post">
+    <div th:each="h : ${houses}" class="property-card">
+        <img th:src="@{'/uploads/images/' + ${h.image}}" alt="House Image">
+        <div class="house-content"><p>Name:</p>  <p th:text="${h.name}"></p></div>
+       <div class="house-content"><p>Address:</p><p th:text="${h.address}"></p></p></div>
+       <div class="house-content"><p>Price:</h3><p th:text="${h.price}"></p></p></div>
+       <div class="house-content"><p>For More Detail:</p><p th:text="${h.email}"></p></div>
+       
+     <!-- Available<p th:text="${h.available} ? 'Yes' : 'No'"></p>-->
+        <input type="hidden" th:value="${h.id}" name="houseId">
+        <button type="submit">Book Now</button>
+    </div>
+</form>
+            </div>   
+        </section>
+
+        <!-- Buying Process -->
+        <section id="buying-process" class="buying-process">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <h3>Step 1: Explore Properties</h3>
+                    <p>Browse through our extensive collection of houses and apartments.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2: Book a Visit</h3>
+                    <p>Schedule a property visit with our team to find your perfect fit.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3: Sign the Lease</h3>
+                    <p>Complete the paperwork and move into your dream home!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tenant Management Section -->
+       <!-- <section id="tenants">
+            <h2>Manage Tenants</h2>
+            <div class="tenant-actions">
+                <a href="/tenants/add"><button>Add New Tenant</button></a>
+                <a href="/tenants/all"><button>View All Tenants</button></a>
+            </div>
+            <p>Keep track of tenant information, activities, and lease agreements.</p>
+        </section>-->
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"The rental process was seamless and efficient. Highly recommend"</p>
+                    
+                </div>
+                <div class="testimonial">
+                    <p>"Found your dream home in just a week. Amazing service!"</p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports -->
+      <!--  <section id="reports">
+            <h2>Generate Reports</h2>
+            <a href="/reports"><button>View Reports</button></a>
+            <p>Analyze rental income, occupancy rates, and tenant performance in one place.</p>
+        </section>-->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>> House Rental Management. All rights reserved.2024</p>
+            <p>Contact us at <a href="mailto:info@houserentals.com">nepalhouserentals@.com</a>.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
