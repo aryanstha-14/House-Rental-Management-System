@@ -18,19 +18,48 @@ public class House {
     private String name;
     private Double price;
     private String image;
+    private boolean available;
 
     @ManyToOne
     @JoinColumn(name = "landlord_id")
     private Landlord landlord;
 
-    private boolean available;
-    
-    
-    
-    
-    
+    @ManyToOne
+    private Tenant tenant; // Tenant who booked the house
 
-    public String getImage() {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getImage() {
 		return image;
 	}
 
@@ -38,54 +67,30 @@ public class House {
 		this.image = image;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public boolean isAvailable() {
+		return available;
 	}
 
-	// Getters and Setters
-    public Long getId() {
-        return id;
-    }
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Landlord getLandlord() {
+		return landlord;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public void setLandlord(Landlord landlord) {
+		this.landlord = landlord;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public Tenant getTenant() {
+		return tenant;
+	}
 
-    public String getName() {
-        return name;
-    }
-
-
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Landlord getLandlord() {
-        return landlord;
-    }
-
-    public void setLandlord(Landlord landlord) {
-        this.landlord = landlord;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
+	public void setTenant(Tenant tenant) {
+		this.tenant = tenant;
+	}
+    
+    
+    
 }
