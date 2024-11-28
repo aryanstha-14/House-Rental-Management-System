@@ -1,0 +1,319 @@
+
+:root {
+    --primary: #ff6f61; /* Vibrant red */
+    --primary-dark: #d55d52; /* Darker red */
+    --secondary: #4d85d0; /* Soft blue */
+    --accent: #f9a826; /* Warm yellow */
+    --background: #f4f7f6; /* Soft light background */
+    --card-bg: #ffffff;
+    --text: #2b2b2b;
+    --text-light: #7a7a7a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.3s ease;
+    
+}
+
+/* Header with Dynamic Gradient */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-bottom: 2px solid var(--primary-dark);
+    animation: slideInFromTop 1s ease-out;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: fadeInBackground 2s ease-in-out infinite alternate;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Navigation with smooth hover effects */
+nav {
+    background: var(--card-bg);
+    padding: 1.2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+    border-bottom: 2px solid var(--primary-dark);
+}
+
+nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Main content area with improved sections */
+main {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.section {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.6rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Enhanced Table Design with interactive rows */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+}
+
+td {
+    padding: 1.2rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+    transition: background 0.3s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #f8fafc;
+    transform: scale(1.02);
+}
+
+/* Modern Form with clear and animated inputs */
+form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+    transform: scale(1.02);
+}
+
+/* Modern Button Styling with animated hover */
+button {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card Grid with more visual appeal */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Attractive Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 2px solid var(--primary-dark);
+    animation: fadeInUp 1s ease-out;
+}
+
+footer p {
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design with smoother transitions */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInBackground {
+    0% { background: rgba(255, 255, 255, 0.05); }
+    100% { background: rgba(255, 255, 255, 0.1); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

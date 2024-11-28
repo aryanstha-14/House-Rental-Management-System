@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Rental Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .payment-options label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: normal;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>House Rental Booking</h1>
+    <!-- Thymeleaf form -->
+    <form th:action="@{/submit-booking}" th:method="post" th:object="${booking}">
+      
+      <!-- Personal Details -->
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" th:field="*{fullName}" placeholder="Enter your full name" required>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" th:field="*{contactNumber}" placeholder="1234567890" required pattern="[0-9]{10}">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" th:field="*{email}" placeholder="example@example.com" required>
+      </fieldset>
+      
+      <!-- Rental Details -->
+      <fieldset>
+        <legend>Rental Details</legend>
+        
+        <label for="houseLocation">Location:</label>
+        <input type="text" id="houseLocation" th:field="*{houseLocation}" placeholder="Enter the property location" required>
+
+        <label for="startDate">Booking Start Date:</label>
+        <input type="date" id="startDate" th:field="*{startDate}" required>
+
+        <label for="endDate">Booking End Date:</label>
+        <input type="date" id="endDate" th:field="*{endDate}" required>
+
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" th:field="*{guests}" min="1" max="10" required>
+      </fieldset>
+      
+      <!-- Payment Information -->
+      <fieldset>
+        <legend>Payment Information</legend>
+        <label for="paymentMethod">Payment Method:</label>
+        <div class="payment-options">
+          <label><input type="radio" th:field="*{paymentMethod}" value="cash" required> Cash on Hand</label>
+          <label><input type="radio" th:field="*{paymentMethod}" value="online"> Online Payment</label>
+          <label><input type="radio" th:field="*{paymentMethod}" value="bank"> Bank Transfer</label>
+        </div>
+      </fieldset>
+
+      <!-- Property Selection -->
+      <fieldset>
+        <legend>Select Property</legend>
+        <label for="property">Choose a Property:</label>
+        <select id="property" th:field="*{property}">
+          <option value="house1">Modern Family Home</option>
+          <option value="house2">Luxury Villa</option>
+          <option value="house3">Cozy Apartment</option>
+        </select>
+      </fieldset>
+
+      <!-- Special Requests -->
+      <fieldset>
+        <legend>Special Requests</legend>
+        <label for="specialRequests">Any Special Requests:</label>
+        <textarea id="specialRequests" th:field="*{specialRequests}" rows="4" placeholder="Add your special requests here..."></textarea>
+      </fieldset>
+      
+      <!-- Confirmation -->
+      <fieldset>
+        <label>
+          <input type="checkbox" required>
+          I confirm the provided information is correct.
+        </label>
+      </fieldset>
+      
+      <!-- Submit & Reset Buttons -->
+      <div class="form-buttons">
+        <button type="submit">Submit Booking</button>
+        <button type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Landlords</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>All Landlords</h1>
+    </header>
+    <main>
+        <ul>
+            <li th:each="landlord : ${landlords}">
+                <a th:href="@{/landlord/{id}/houses(id=${landlord.id})}" th:text="${landlord.name}"></a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

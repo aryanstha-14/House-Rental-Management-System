@@ -1,0 +1,264 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 100%;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 12px 30px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Featured Properties Section */
+.featured-properties {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.featured-properties h2 {
+    font-size: 32px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.property-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.property-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-card h3 {
+    font-size: 20px;
+    color: #4caf50;
+    margin: 10px 15px 0;
+}
+
+.property-card p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 5px 15px;
+}
+
+.property-card button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.property-card button:hover {
+    background-color: #388e3c;
+}
+
+/* Buying Process Section */
+.buying-process {
+    background: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.buying-process h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.step {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step h3 {
+    font-size: 20px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial {
+    background: #34495e;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ffd54f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff9c4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .property-grid, .process-steps, .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-card, .step, .testimonial {
+        width: 90%;
+    }
+}
+
+
+
+.house-div{
+	display: grid;
+	gap:2.5rem;
+	grid-template-columns: repeat(3,350px);
+	justify-items: center;
+	
+}
+
+.house-content{
+	display: flex;
+	  align-items: center;
+}
+
+
+

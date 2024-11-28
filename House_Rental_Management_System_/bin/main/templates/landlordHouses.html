@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Landlord Houses</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Landlord Information</h1>
+    </header>
+    <main>
+        <!-- Landlord Details -->
+        <div>
+            <p><strong>Landlord Email:</strong> <span th:text="${landlord.email}"></span></p>
+            <p><strong>User Name:</strong> <span th:text="${landlord.user.username}"></span></p>
+        </div>
+        <hr>
+
+        <!-- Houses Section -->
+        <h2>Houses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Price</th>
+                    <th>Available</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="house : ${houses}">
+                    <td th:text="${house.name}"></td>
+                    <td th:text="${house.address}"></td>
+                    <td th:text="${house.price}"></td>
+                    <td th:text="${house.available} ? 'Yes' : 'No'"></td>
+                    <td>
+                        <img th:src="@{'/uploads/images/' + ${house.image}}" 
+                             alt="House Image" style="max-width: 100px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <h4>Back to Landlords</h4>
+    </footer>
+</body>
+</html>
