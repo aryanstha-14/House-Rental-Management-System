@@ -14,4 +14,8 @@ public interface TenantRepository extends JpaRepository<Tenant, Long> {
 
 	Tenant save(User user);
     // You can define custom queries here if needed
+
+	Tenant findTenantByUser(User user);
+
+	Tenant findTenantById(Long tenantId);
 }

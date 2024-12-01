@@ -47,19 +47,20 @@
 
 
    
- <form class="house-div" action="/houses/booknow" method="post">
-    <div th:each="h : ${houses}" class="property-card">
-        <img th:src="@{'/uploads/images/' + ${h.image}}" alt="House Image">
-        <div class="house-content"><p>Name:</p>  <p th:text="${h.name}"></p></div>
-       <div class="house-content"><p>Address:</p><p th:text="${h.address}"></p></p></div>
-       <div class="house-content"><p>Price:</h3><p th:text="${h.price}"></p></p></div>
-       <div class="house-content"><p>For More Detail:</p><p th:text="${h.email}"></p></div>
-       
-     <!-- Available<p th:text="${h.available} ? 'Yes' : 'No'"></p>-->
-        <input type="hidden" th:value="${h.id}" name="houseId">
-        <button type="submit">Book Now</button>
-    </div>
-</form>
+				    <div th:each="h : ${houses}" class="property-card">
+				<form class="house-div" th:action="@{/houses/booknow/{id}(id=${h.id})}" method="post">
+				        <img th:src="@{'/uploads/images/' + ${h.image}}" alt="House Image">
+				        <div class="house-content"><p>Name:</p>  <p th:text="${h.name}"></p></div>
+				       <div class="house-content"><p>Address:</p><p th:text="${h.address}"></p></p></div>
+				       <div class="house-content"><p>Price:</h3><p th:text="${h.price}"></p></p></div>
+				       <div class="house-content"><p>For More Detail:</p><p th:text="${h.email}"></p></div>
+				       
+				     <!-- Available<p th:text="${h.available} ? 'Yes' : 'No'"></p>-->
+				        <input type="text" th:value="${h.id}" name="houseId">
+				        <button type="submit">Book Now</button>
+				    </div>
+				</form>
+
             </div>   
         </section>
 

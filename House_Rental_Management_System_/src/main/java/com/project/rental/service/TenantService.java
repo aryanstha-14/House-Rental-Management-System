@@ -45,6 +45,14 @@ public class TenantService {
 	tenant.setUser(user);
 		return tenantRepository.save(tenant);
 	}
+	public Tenant getTenantByUser(User user) {
+		return tenantRepository.findTenantByUser(user);
+
+	}
+	public Tenant findTenantById(Long tenantId) {
+		return tenantRepository.findTenantById(tenantId);
+
+	}
 
 
 

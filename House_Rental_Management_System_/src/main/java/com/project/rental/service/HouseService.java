@@ -43,4 +43,9 @@ public class HouseService {
 		return houseRepository.getHousesByLandlord(landlord);
 	}
 
+	public House findHouseById(Long houseId) {
+		return houseRepository.findHouseById(houseId);
+
+	}
+
 }

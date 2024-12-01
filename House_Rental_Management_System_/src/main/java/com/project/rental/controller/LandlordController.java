@@ -67,6 +67,7 @@ public class LandlordController {
 //        // Redirect back to the same page to show the updated list
 //        return "redirect:/landlords/all";
 //    }
+    
  // Display all landlords
     @GetMapping("/landlords/all")
     public String getAllLandlords(Model model) {

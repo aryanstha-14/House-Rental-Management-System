@@ -47,5 +47,9 @@ public class LandlordService {
 		
 	}
 
+	public Landlord getLandlordByUser(User user) {
+		return landlordRepository.findLandlordByUser(user);
+	}
+
    	}
 

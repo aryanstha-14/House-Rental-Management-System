@@ -29,9 +29,6 @@ public class UserService {
 
     // Create or update a user with a default role if not provided
     public User saveUser(User user) {
-//        if (user.getRole() == null) {
-//            user.setRole(Role.TENANT); // Default role can be set to TENANT
-//        }
         return userRepository.save(user);	
     }
 
